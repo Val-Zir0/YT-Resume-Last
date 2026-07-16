@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>YT Resume Last Settings</title>
+  <link rel="shortcut icon" href="../icons/icon128.png" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/bootstrap/bootstrap-icons.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container-fluid py-3">
+    <div class="d-flex align-items-center mb-3">
+      <img src="../icons/icon48.png" alt="Logo" width="32" height="32" class="me-2" style="border-radius: 8px;">
+      <h5 class="mb-0 fw-bold">YT Resume Last</h5>
+    </div>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab">General</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="youtube-tab" data-bs-toggle="tab" data-bs-target="#youtube" type="button" role="tab">YouTube</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music" type="button" role="tab">Music</button>
+      </li>
+    </ul>
+
+    <div class="tab-content pt-3" id="myTabContent">
+      <!-- General Settings -->
+      <div class="tab-pane fade show active" id="general" role="tabpanel">
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="autoResumeSwitch">
+          <label class="form-check-label" for="autoResumeSwitch">Auto Resume</label>
+        </div>
+        <div class="text-muted small mb-2" style="margin-left: 2.5rem;">
+          Automatically redirect to your last session when visiting the homepage.
+        </div>
+        
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="showNotificationAfterResume">
+          <label class="form-check-label text-muted small" for="showNotificationAfterResume">Show Notification after Resume</label>
+        </div>
+        <hr>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="enableMinimumWatchTime">
+          <label class="form-check-label text-muted small" for="enableMinimumWatchTime">Enable Minimum Watch Time</label>
+        </div>
+        <div class="input-group input-group-sm mb-3 w-75" style="margin-left: 2.5rem;">
+          <span class="input-group-text bg-dark text-light border-secondary">Seconds</span>
+          <input type="number" class="form-control bg-dark text-light border-secondary setting-input" id="minimumWatchTimeSeconds" min="1" max="300" value="5">
+        </div>
+      </div>
+
+      <!-- YouTube Settings -->
+      <div class="tab-pane fade" id="youtube" role="tabpanel">
+        <div class="mb-3">
+          <h6 class="text-white-50">Last Session</h6>
+          <p class="card-text text-truncate mb-2 text-info" id="ytStatus">No data saved.</p>
+          <button class="btn btn-sm btn-outline-danger" id="clearYtBtn">
+            <i class="bi bi-trash3"></i> Clear Session
+          </button>
+        </div>
+        <hr>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytEnableResume" checked>
+          <label class="form-check-label fw-bold text-danger" for="ytEnableResume">Enable Resume</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytRestorePlaybackPosition" checked>
+          <label class="form-check-label text-muted small" for="ytRestorePlaybackPosition">Restore Playback Position</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytRestorePlaybackSpeed" checked>
+          <label class="form-check-label text-muted small" for="ytRestorePlaybackSpeed">Restore Playback Speed</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytRestoreVolume" checked>
+          <label class="form-check-label text-muted small" for="ytRestoreVolume">Restore Volume</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytRestoreMute" checked>
+          <label class="form-check-label text-muted small" for="ytRestoreMute">Restore Mute</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytRestorePlaylist" checked>
+          <label class="form-check-label text-muted small" for="ytRestorePlaylist">Restore Playlist</label>
+        </div>
+      </div>
+
+      <!-- YouTube Music Settings -->
+      <div class="tab-pane fade" id="music" role="tabpanel">
+        <div class="mb-3">
+          <h6 class="text-white-50">Last Session</h6>
+          <p class="card-text text-truncate mb-2 text-primary" id="musicStatus">No data saved.</p>
+          <button class="btn btn-sm btn-outline-danger" id="clearMusicBtn">
+            <i class="bi bi-trash3"></i> Clear Session
+          </button>
+        </div>
+        <hr>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytmEnableResume" checked>
+          <label class="form-check-label fw-bold" style="color: #ff0050;" for="ytmEnableResume">Enable Resume</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytmRestorePlaybackPosition" checked>
+          <label class="form-check-label text-muted small" for="ytmRestorePlaybackPosition">Restore Playback Position</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytmRestorePlaybackSpeed" checked>
+          <label class="form-check-label text-muted small" for="ytmRestorePlaybackSpeed">Restore Playback Speed</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytmRestoreVolume" checked>
+          <label class="form-check-label text-muted small" for="ytmRestoreVolume">Restore Volume</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytmRestorePlaylist" checked>
+          <label class="form-check-label text-muted small" for="ytmRestorePlaylist">Restore Playlist</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytmRestoreShuffle" checked>
+          <label class="form-check-label text-muted small" for="ytmRestoreShuffle">Restore Shuffle (if possible)</label>
+        </div>
+        <div class="form-check form-switch mb-2">
+          <input class="form-check-input setting-toggle" type="checkbox" id="ytmRestoreRepeat" checked>
+          <label class="form-check-label text-muted small" for="ytmRestoreRepeat">Restore Repeat (if possible)</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="mt-4 d-flex justify-content-between border-top pt-3">
+      <button class="btn btn-sm btn-outline-danger" id="clearDataBtn">
+        <i class="bi bi-trash3 me-1"></i> Clear All
+      </button>
+      <div class="dropdown">
+        <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          <i class="bi bi-play-circle me-1"></i> Resume Now
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+          <li><a class="dropdown-item" href="#" id="resumeYtBtn"><i class="bi bi-youtube text-danger me-2"></i> YouTube</a></li>
+          <li><a class="dropdown-item" href="#" id="resumeYtmBtn"><i class="bi bi-music-note-beamed text-primary me-2"></i> YT Music</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Custom Toast for Alerts/Confirms -->
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 1100; width: 100%; max-width: 350px;">
+    <div id="customToast" class="toast bg-dark text-light border-secondary shadow-lg w-100" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false" style="border-radius: 12px;">
+      <div class="toast-header border-secondary bg-dark text-light py-2" style="border-radius: 12px 12px 0 0;">
+        <img src="../icons/icon16.png" class="me-2" alt="icon" style="border-radius: 4px;">
+        <strong class="me-auto">YT Resume Last</strong>
+        <button type="button" class="btn-close btn-close-white" style="font-size: 0.75rem;" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body" id="customToastMessage" style="font-size: 0.95rem;">
+        <!-- Message -->
+      </div>
+      <div class="toast-body border-top border-secondary text-end py-2" id="customToastFooter">
+        <!-- Buttons -->
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
