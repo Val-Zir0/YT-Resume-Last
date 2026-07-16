@@ -26,7 +26,7 @@ Automatically continue watching or listening exactly where you left off.
 
 ---
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=24&pause=1000&center=true&vCenter=true&width=700&lines=Resume+your+last+YouTube+session.;Resume+YouTube+Music+automatically.;Restore+Volume+%7C+Speed+%7C+Playlist.;Built+with+❤️+by+Fares+Hamed."/>
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=24&pause=1000&center=true&vCenter=true&width=700&lines=Resume+your+last+YouTube+session;Resume+YouTube+Music+automatically;Restore+Volume+%7C+Speed+%7C+Playlist;Built+by+Fares+Hamed" />
 
 </div>
 
